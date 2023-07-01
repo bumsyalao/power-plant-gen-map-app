@@ -29,7 +29,7 @@ function worker() {
     // Start the server
     app.listen(port, () => {
         logger_1.default.log("info", `Server is running on port ${port}!`);
-        getPlantController_1.cronJob.start();
+        // getPlantController_1.cronJob.start();
     });
 }
 throng({
