@@ -16,4 +16,19 @@ redisClient.on('error', (error) => {
     console.error('Redis connection error:', error);
 });
 
-module.exports = redisClient;
+// Function to close the Redis connection gracefully
+function closeRedisConnection() {
+    return new Promise((resolve, reject) => {
+        redisClient.quit((err) => {
+            if (err) {
+                reject(err);
+            } else {
+                console.log('Redis connection closed');
+                resolve();
+            }
+        });
+    });
+}
+
+// Export the Redis client and closeRedisConnection function
+module.exports = { redisClient, closeRedisConnection };
