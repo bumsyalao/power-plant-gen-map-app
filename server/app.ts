@@ -28,5 +28,5 @@ app.use((req, res, next) => {
 // Start the server
 app.listen(port, () => {
     logger.log("info", `Server is running on port ${port}!`);
-    cronJob.start();
+    // cronJob.start();
 });
