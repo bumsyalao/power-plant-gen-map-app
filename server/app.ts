@@ -6,7 +6,7 @@ import routes from './routes';
 import { cronJob } from './contollers/getPlantController';
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(bodyParser.json({ limit: "1mb" }));
@@ -28,5 +28,5 @@ app.use((req, res, next) => {
 // Start the server
 app.listen(port, () => {
     logger.log("info", `Server is running on port ${port}!`);
-    // cronJob.start();
+    cronJob.start();
 });
