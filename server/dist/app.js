@@ -10,7 +10,7 @@ const logger_1 = __importDefault(require("./utils/logger"));
 const routes_1 = __importDefault(require("./routes"));
 const getPlantController_1 = require("./contollers/getPlantController");
 const app = (0, express_1.default)();
-const port = 8000;
+const port = process.env.PORT || 8000;
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json({ limit: "1mb" }));
 app.use(body_parser_1.default.urlencoded({ extended: true }));
