@@ -7,7 +7,13 @@ frontend:
       
     build:
       commands:
+  artifacts:
+    baseDirectory: 
+    files:
 
+  cache:
+    paths:
+      
 backend:
   phases:
     build:
