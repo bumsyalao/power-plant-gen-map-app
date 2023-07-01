@@ -47,17 +47,17 @@ const getPlantData = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.getPlantData = getPlantData;
-exports.cronJob = node_cron_1.default.schedule('* * * * *', () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const excelData = (0, parseExcelFile_1.parseExcelFile)();
-        yield redisSetAsync(redisKey, JSON.stringify(excelData));
-        logger_1.default.info('info', 'Excel data cached successfully');
-    }
-    catch (error) {
-        logger_1.default.error('error', 'Error caching Excel data:', error);
-    }
-    finally {
-        // Close Redis connection to avoid memory leaks
-        yield (0, db_1.closeRedisConnection)();
-    }
-}));
+// exports.cronJob = node_cron_1.default.schedule('* * * * *', () => __awaiter(void 0, void 0, void 0, function* () {
+//     try {
+//         const excelData = (0, parseExcelFile_1.parseExcelFile)();
+//         yield redisSetAsync(redisKey, JSON.stringify(excelData));
+//         logger_1.default.info('info', 'Excel data cached successfully');
+//     }
+//     catch (error) {
+//         logger_1.default.error('error', 'Error caching Excel data:', error);
+//     }
+//     finally {
+//         // Close Redis connection to avoid memory leaks
+//         yield (0, db_1.closeRedisConnection)();
+//     }
+// }));
