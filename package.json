@@ -10,7 +10,7 @@
     "build": "tsc -p ./tsconfig.json --outDir ./server/dist"
   },
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
